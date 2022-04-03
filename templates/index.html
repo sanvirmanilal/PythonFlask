@@ -6,8 +6,12 @@
         <h1>Shopping List Hi </h1>
         <ul>
             {% for item in items %}
-            <li>{{ item }}</li>            
+            <li>{{ item }} <a href="{{ url_for('RemoveItem', itemName=item) }}">[Remove]</a></li>
             {% endfor %}
         </ul>
-        <form>
-    
+        <form method="POST">
+            <input type="text" name="item">
+            <input type="submit" value="Add to list">            
+        </form>
+    </body>
+</html>
